@@ -250,7 +250,7 @@ h6 {
     color: #fff;
     margin-bottom: 0;
     font-size: 50px;
-    line-height: 30px;
+    line-height: 50px;
     letter-spacing: 1px;
 }
 
@@ -738,9 +738,7 @@ h6 {
     }
 }
 
-#party .text-right {
-    border-right: 1px solid #FF69B4;
-}
+
 
 #party h4 {
     letter-spacing: 2px;
@@ -797,9 +795,6 @@ h6 {
     }
 }
 
-#place .text-right {
-    border-right: 1px solid #FF69B4;
-}
 
 #place h4 {
     letter-spacing: 2px;

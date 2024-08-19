@@ -50,13 +50,17 @@
     var introCarousel = $(".carousel");
     var introCarouselIndicators = $(".carousel-indicators");
     introCarousel.find(".carousel-inner").children(".carousel-item").each(function (index) {
-        (index === 0) ?
-                introCarouselIndicators.append("<li data-target='#introCarousel' data-slide-to='" + index + "' class='active'></li>") :
-                introCarouselIndicators.append("<li data-target='#introCarousel' data-slide-to='" + index + "'></li>");
-
-        $(this).css("background-image", "url('" + $(this).children('.carousel-background').children('img').attr('src') + "')");
-        $(this).children('.carousel-background').remove();
+        // Add indicators
+        introCarouselIndicators.append("<li data-target='#introCarousel' data-slide-to='" + index + "'" + (index === 0 ? " class='active'" : "") + "></li>");
+    
+        // Set background image for the desktop view and remove only the desktop image element
+        var desktopImageUrl = $(this).find('.desktop-image').attr('src');
+        $(this).css("background-image", "url('" + desktopImageUrl + "')");
+    
+        // Keep the mobile image and remove the desktop image
+        $(this).find('.desktop-image').remove();
     });
+
 
     $(".carousel").swipe({
         swipe: function (event, direction, distance, duration, fingerCount, fingerData) {
