@@ -213,6 +213,8 @@ h6 {
     display: -webkit-flex;
     display: -ms-flexbox;
     display: flex;
+    flex-direction: column;
+    justify-content: space-between;
     -webkit-box-pack: center;
     -webkit-justify-content: center;
     -ms-flex-pack: center;
@@ -1134,5 +1136,30 @@ h6 {
     h5,
     h6 {
         letter-spacing: 0 !important;
+    }
+}
+
+
+.moving-img{
+    width: 50px;
+    height: auto;
+    position: fixed; 
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 10px; 
+    z-index: 1000;
+    cursor: pointer;
+    animation: moveImg 2s infinite ease-in-out;
+}
+
+@keyframes moveImg {
+    0%{
+        margin-bottom: 0;
+    }
+    50%{
+        margin-bottom: 20px;
+    }
+    100%{
+        margin-bottom: 0;
     }
 }
